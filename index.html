@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crud Operation</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+<table>
+  <tr>
+    <td>
+      <form autocomplete="off" onsubmit="onFormSubmit()">
+        <div>
+          <label >Select Rider</label>
+          <br>
+          <br>
+          <select  id="select"    required>
+            <option value="" selected disabled hidden  >Riders Team</option>
+          </select>
+          <br>
+
+        </div>
+        <br>
+        <div>
+          <label for="riderFirstName">Rider First Name</label>
+          <input required type="text" placeholder="riderFirstName" id="riderFirstName">
+        </div>
+        <div>
+          <label for="riderLastName">Rider Last Name</label>
+          <input required type="text" placeholder="riderLastName" id="riderLastName">
+        </div>
+
+        <div>
+          <label for="riderAge">Rider Age </label>
+          <input required type="number" placeholder="riderAge" id="riderAge">
+        </div>
+        <div>
+          <label for="riderTime">Rider Time in minutes </label>
+          <input required type="number" placeholder="riderTime" id="riderTime">
+        </div>
+        <div>
+          <label for="riderPoint">Rider Point </label>
+          <input required type="number" placeholder="riderAge" id="riderPoint">
+        </div>
+        <div>
+          <label for="riderMountainPoints">Rider Mountain Points </label>
+          <input required type="number" placeholder="riderMountainPoints" id="riderMountainPoints">
+        </div>
+        <div>
+          <label for="riderCountry">Rider Country </label>
+          <input required type="text" placeholder="riderCountry" id="riderCountry">
+        </div>
+
+        <div class="form_action_button">
+          <!--create riderID-->
+          <button id="create"> Create</button>
+
+          <!--delete riderID-->
+          <input type="number" placeholder="Delete Candidate Id" id="candidateId">
+          <button id="delete"> Delete</button>
+
+          <!--fine by frstName-->
+          <input type="text" placeholder="Search First Name" id="search-input">
+          <button id="search"> Search First Name</button>
+
+          <!--fine by riderID-->
+          <input type="text" placeholder="SearchById" id="search-id">
+          <button id="findID"> SearchById</button>
+
+          <button id="reset"  >Reset Page</button>
+        </div>
+      </form>
+
+    <td>
+      <table id="table">
+
+      </table>
+
+    <td>
+    </td>
+  </tr>
+</table>
+<span id="message"></span>
+<br>
+
+
+</body>
+</html>
