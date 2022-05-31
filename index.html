@@ -14,7 +14,7 @@
 <table>
   <tr>
     <td>
-      <form autocomplete="off" onsubmit="onFormSubmit()">
+      <form >
         <div>
           <label >Select Rider</label>
           <br>
@@ -58,19 +58,19 @@
 
         <div class="form_action_button">
           <!--create riderID-->
-          <button id="create"> Create</button>
+          <button type="button" id="create"> Create</button>
 
           <!--delete riderID-->
           <input type="number" placeholder="Delete Rider Id" id="riderId">
-          <button id="delete"> Delete</button>
+          <button type="button" id="delete"> Delete</button>
 
           <!--fine by frstName-->
           <input type="text" placeholder="Search First Name" id="search-input">
-          <button id="search"> Search First Name</button>
+          <button type="button" id="search"> Search First Name</button>
 
           <!--fine by riderID-->
           <input type="text" placeholder="SearchById" id="search-id">
-          <button id="findID"> SearchById</button>
+          <button type="button" id="findID"> SearchById</button>
 
           <button id="reset"  >Reset Page</button>
         </div>
@@ -90,6 +90,8 @@
 <script src="js/show.js"></script>
 <script src="js/create.js"></script>
 <script src="js/teams.js"></script>
+<script src="js/update.js"></script>
+<script src="js/delete.js"></script>
 
 
 

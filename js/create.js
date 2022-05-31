@@ -1,8 +1,4 @@
-const out = function (str) {
-  console.log(str);
-}
-
-// const riderId = document.getElementById('riderId');
+const riderId = document.getElementById('riderId');
 const riderFirstName = document.getElementById('riderFirstName');
 const riderLastName = document.getElementById('riderLastName');
 const riderAge = document.getElementById('riderAge');
@@ -15,41 +11,36 @@ const create = document.getElementById('create');
 
 async function createRider() {
   const url = "http://localhost:8080/create/riders";
-  out(url);
-  const riderData = {
-    riderFirstName: riderFirstName,
-    riderLastName: riderLastName,
-    riderAge: riderAge,
-    riderTime: riderTime,
-    riderPoint: riderPoint,
-    riderMountainPoints:riderMountainPoints,
-    riderCountry: riderCountry,
-    // Nest Objet in en objet finder specifik ind i objet, havd jeg skal bruge.
+  const data = {
+    riderFirstName: riderFirstName.value,
+    riderLastName: riderLastName.value,
+    riderAge: riderAge.value,
+    riderTime: riderTime.value,
+    riderPoint: riderPoint.value,
+    riderMountainPoints:riderMountainPoints.value,
+    riderCountry: riderCountry.value,
     team: {
-      teamId: teamId.value,
-      teamName: teamId.value,
-      teamCountry: teamId.value
+      teamId: teamId.value
 
     }
 
   }
-
-  out(riderData);
+console.log(JSON.stringify(data));
   const response = await fetch(url, {
     method: "POST",
-    body: JSON.stringify(riderData),
+    body: JSON.stringify(data),
     headers: {"Content-type": "application/json; charset=UTF-8"}
   })
   if (!response.ok) {
     alert("Could not create");
   } else {
-    alert("is created" + riderData.riderFirstName);
+    alert("is created" + data.riderFirstName);
   }
   reloadTable();
 }
 
-create.addEventListener("click", () => {
+create.addEventListener("click", async () => {
   console.log(riderId.value + "value");
-  createRider();
+  await createRider();
 })
 

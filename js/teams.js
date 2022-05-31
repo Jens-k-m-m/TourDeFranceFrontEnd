@@ -4,7 +4,6 @@ async function getTeams() {
   const url = "http://localhost:8080/show/teams";
   const resp = await fetch(url);
   const respData = await resp.json();
-  out(respData);
   addTeamDataToOptions(respData);
 }
 function addTeamDataToOptions(teamsData){

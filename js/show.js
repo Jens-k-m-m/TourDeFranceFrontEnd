@@ -8,7 +8,7 @@ const search = document.getElementById('search');
 
 //find
 async function getRidersBySearch(searchFirstName) {
-  const url = "http://localhost:8080/findRiderByFirstName/riders/" + searchFirstName;
+  const url = "http://localhost:8080/byFirstName/riders/" + searchFirstName;
   const resp = await fetch(url);
   const respData = await resp.json();
   console.log(respData);
@@ -78,9 +78,9 @@ function addDataToRows(data) {
     row.insertCell(5).innerHTML = element.riderPoint;
     row.insertCell(6).innerHTML = element.riderMountainPoints;
     row.insertCell(7).innerHTML = element.riderCountry;
-    row.insertCell(8).innerHTML = element.teamId;
-    row.insertCell(9).innerHTML = element.teamName;
-    row.insertCell(10).innerHTML = element.teamCountry;
+    row.insertCell(8).innerHTML = element.team.teamId;
+    row.insertCell(9).innerHTML = element.team.teamName;
+    row.insertCell(10).innerHTML = element.team.teamCountry;
   })
 }
 function reloadTable(){
