@@ -34,12 +34,12 @@ function resetTable() {
 }
 function resetWeb() {
   table.innerHTML="";
-  getCandidates()
+  getRiders()
   tableHeadlines()
 }
 
 
-async function getCandidates() {
+async function getRiders() {
   const url = "http://localhost:8080/show/riders";
   const resp = await fetch(url);
   const respData = await resp.json();
@@ -50,18 +50,17 @@ async function getCandidates() {
 function tableHeadlines() {
   let rowCount = table.rows.length;
   let row = table.insertRow(rowCount);
-  row.insertCell(0).innerText = "Rider Id";
-  row.insertCell(1).innerText = "Rider First Name";
-  row.insertCell(2).innerText = "Rider Last Name";
-  row.insertCell(3).innerText = "Rider Age";
-  row.insertCell(4).innerText = "Rider Time";
-  row.insertCell(5).innerText = "Rider Point";
-  row.insertCell(6).innerText = "Rider Mountain Points";
-  row.insertCell(7).innerText = "Rider Country";
+  row.insertCell(0).innerText = "Id";
+  row.insertCell(1).innerText = "First Name";
+  row.insertCell(2).innerText = "Last Name";
+  row.insertCell(3).innerText = "Age";
+  row.insertCell(4).innerText = "Time";
+  row.insertCell(5).innerText = "Point";
+  row.insertCell(6).innerText = "Mountain Points";
+  row.insertCell(7).innerText = "Country";
   row.insertCell(8).innerHTML = "Team Id";
   row.insertCell(9).innerHTML = "Team Name";
   row.insertCell(10).innerHTML = "Team Country";
-
 }
 
 function addDataToRows(data) {
@@ -86,7 +85,7 @@ function addDataToRows(data) {
 function reloadTable(){
 
   resetTable();
-  getCandidates();
+  getRiders();
 }
 reloadTable();
 

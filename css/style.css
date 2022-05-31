@@ -6,14 +6,19 @@ body {
 }
 
 table {
-  width: 80%;
-  margin: 40px auto;
-  background: rgb(124, 154, 167);
+  width: 100%;
+  margin: 0px auto;
+  background: rgb(239, 243, 245);
 }
 
 table.list {
   text-align: center;
   width: 100%;
+}
+
+.form-floating > .form-control, .form-floating > .form-control-plaintext, .form-floating > .form-select {
+  height: calc(2.5rem + 2px);
+  line-height: 1.25;
 }
 
 td {
@@ -27,13 +32,14 @@ tr:nth-child(even), table.list thead> tr{
 }
 
 input[type="text"],input[type="number"]{
-  width: 30%;
+  width: 50%;
   padding: 12px 20px;
   margin:8px 0;
   display: inline-block;
   border: 1px solid rgb(165,161,161);
   border-radius: 4px;
 }
+
 
 input[type="submit"],input[type="reset"]{
   background: #eee;
@@ -60,7 +66,7 @@ button{
   padding: 6px 12px;
   margin:15px 0 10px;
   display: inline-block;
-  border: 1px solid rgb(165,161,161);
+  border: 1px solid rgb(255, 254, 254);
   border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;

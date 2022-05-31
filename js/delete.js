@@ -1,7 +1,7 @@
 const riderIdDelete = document.getElementById('riderId');
 const deletebut = document.getElementById('delete');
 
-async function deleteCandidate(findId) {
+async function deleteRider(findId) {
   const url = "http://localhost:8080/delete/rider/" + findId;
   // const resp = await fetch(url);
   // const data = await resp.json();
@@ -18,7 +18,9 @@ async function deleteCandidate(findId) {
 }
 
 deletebut.addEventListener("click", async () => {
-  await deleteCandidate(riderIdDelete.value);
+  if (confirm('Do you want to delete this record,\nrider Id: ' + riderId.value)) {
+    await deleteRider(riderIdDelete.value);
+  }
 })
 
 

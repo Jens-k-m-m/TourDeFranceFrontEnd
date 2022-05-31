@@ -3,24 +3,24 @@ const findByIdBut = document.getElementById('findID');
 
 
 
-async function getCandidatesBySearchById(searchById) {
+async function getRiderBySearchById(searchById) {
   const url = "http://localhost:8080/findRiderById/rider/" + searchById;
   const resp = await fetch(url);
   const respData = await resp.json();
   console.log(respData);
   resetTable();
   addDataToRows(respData);
-  createEditFrom(respData);
+  riderEditFrom(respData);
 }
 
 findByIdBut.addEventListener("click", () => {
   const ridersById = inputEdit.value;
   if (ridersById) {
-    getCandidatesBySearchById(ridersById);
+    getRiderBySearchById(ridersById);
   }
 })
 
-function createEditFrom(data) {
+function riderEditFrom(data) {
   data.forEach(element => {
 
     let rowCount = table.rows.length;
